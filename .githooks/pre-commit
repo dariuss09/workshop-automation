@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if git grep --cached -q "PASSWORD="; then
+    echo -e "\e[31m================================================================\e[0m"
+    echo -e "\e[31mEROARE: Commit blocat!\e[0m"
+    echo "S-a detectat șirul 'PASSWORD=' în fișierele adăugate în staging."
+    echo "Elimină parola înainte de a face commit pentru a preveni expunerea datelor."
+    echo -e "\e[31m================================================================\e[0m"
+    
+    exit 1
+fi
+
+exit 0
